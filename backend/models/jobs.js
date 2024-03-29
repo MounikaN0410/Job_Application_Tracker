@@ -2,6 +2,7 @@ const mongoose=require("mongoose")
 
 const JobSchema=new mongoose.Schema(
     {
+        _id:mongoose.Schema.Types.ObjectId,
         company:{
             type:String,
             required:true,
@@ -16,7 +17,7 @@ const JobSchema=new mongoose.Schema(
         },
         jobstatus:{
             type:String,
-            enum:['Rejected','Online Assessment','Interview','Selected','In Process']
+            enum:['','Rejected','Online Assessment','Interview','Selected','In Process']
         },
         notes:{
             type:[String]

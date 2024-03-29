@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css?family=Alkatra");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700,600|Open+Sans:400|Poppins:500,800");
+
+:root{
+    --main-color:#0c88a4;
+    --black: #000000;
+    --white:#ffffff;
+    --light_grey:#C0C0C0;
+    --light_blue:#dff9ff;
+
+
+    --font-size-l: 30px;
+    --font-size-m: 24px;
+    --font-size-s: 20px;
+    --font-size-xl: 36px;
+    --font-size-xs: 18px;
+    --font-size-xxl: 64px;
+
+    --font-family-nunito: "Nunito", Helvetica;
+    --font-family-open_sans: "Open Sans", Helvetica;
+    --font-family-poppins: "Poppins", Helvetica;
+
+}
+.App{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap:10px;
+}
+.icon-text-wrapper{
+    display:flex;
+    margin:5px;
+    align-items: baseline;
+    border-color: black;
+}
+
+.icon-big{
+    color:var(--main-color);
+    font-size:var(--font-size-l);
+    margin:10px
+}
+.title-text{
+    font:var(--font-family-nunito);
+    font-size:var(--font-size-xl);
+    color:var(--black);
+
+}
+
+.add-job-container{
+    height:40vh;
+    width:70vw;
+    border: 5px solid  var(--main-color);
+    border-radius: 20px;
+}
+
+.form-input-text{
+    font:var(--font-family-nunito);
+    font-size:var(--font-size-s);
+    color:var(--black);
+
+}
+
+.add-job-form{
+    display:'flex';
+    
+    justify-content:'space-evenly';
+    gap:190px;
+
+}
+.input-box-style{
+    font:var(--font-family-nunito);
+    border: "2px solid gray";
+    border-radius: "5px";
+    padding: "10px";
+    width: "320px";
+    /* fullWidth: true; */
+    outline: "none"
+}
+
+
+
+
+
+/* JobCard */
+.card{
+    height:20vh;
+    width:70vw;
+    display:flex;
+    gap:10px;
+    border:2px solid var(--light_grey);
+    box-shadow:5px;
+    border-radius:10px;
+    padding:5px;
+
+}
+
+.card:hover{
+    transform: scale(1,1.01);
+    background-color:var(--light_blue);
+
+}
+
+.cardimgContainer{
+    height:130px;
+    width:130px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+   margin:10px;
+}
+.main-text{
+    font:var(--font-family-nunito);
+    font-size:var(--font-size-m);
+    color:var(--black);
+}
+
+.grey-text{
+    font:var(--font-family-poppins);
+    font-size:var(--font-size-s);
+    color:var(--light_grey);
+
+}
+.jobdata{
+    display:flex;
+    flex-direction: column;
+
+}
