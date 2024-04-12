@@ -87,7 +87,9 @@ const handleAddjob= async(e)=>{
                 placeholder='Notes'
                 value={notes}
                 onChange={(event)=>setNotes(event.target.value)}/>
+             <button type='button'>Cancel</button>
             <button type='button' onClick={handleAddjob}>Add Job</button>
+           
             
         </div>
     </div>

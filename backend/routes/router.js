@@ -59,7 +59,7 @@ router.patch('/:id',async(req,res)=>{
     const patch_id=req.params.id
     const req_id=await Jobs.find({_id:patch_id})
     patchOps={};
-    console.log(changes)
+    console.log("changes"+changes)
 
     for (const ops in changes){
 

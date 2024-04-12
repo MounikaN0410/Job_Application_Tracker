@@ -8,6 +8,8 @@ import { useState,useEffect } from 'react';
 
 function App() {
   const [jobs,setJobs]=useState([]);
+  const [showUpdateForm,setShowUpdateForm]=useState("");
+  
   useEffect(()=>{
     const fetchJobs=async ()=>{
       try {
@@ -21,7 +23,7 @@ function App() {
       }
     };
     fetchJobs();
-  })
+  },[])
 
   useEffect(() => {
     console.log(jobs);
