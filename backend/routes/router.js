@@ -4,6 +4,7 @@ const Jobs=require("../models/jobs")
 
 
 const router=express.Router()
+// Get all Added Jobs
 
 router.get('/',async (req,res)=>{
     // const {company,jobrole,dateapplied,status,notes}=req.body
@@ -19,6 +20,78 @@ router.get('/',async (req,res)=>{
     }
 
 })
+
+//Filter by Company Name
+router.get('/company/:companyName',async (req,res)=>{
+    const req_company=req.params.companyName;
+    
+    try{
+        const jobs=await Jobs.find({company:req_company}).sort({dateapplied:1})
+        if (jobs.length>=0){
+            console.log(jobs)
+            res.status(200).json(jobs)
+        }else{
+            res.status(204).json({
+                message:"Company not found in Jobs"
+            })
+        }
+        
+    }catch(err){
+        res.status(400).json({
+            message:"Could not fetch jobs"
+        })
+    }
+
+})
+
+//Filter by Status
+router.get('/status/:jobStatus',async (req,res)=>{
+    const req_status=req.params.jobStatus;
+    
+    try{
+        const jobs=await Jobs.find({jobstatus:req_status}).sort({dateapplied:1})
+        if (jobs.length>=0){
+            console.log(jobs)
+            res.status(200).json(jobs)
+        }else{
+            res.status(204).json({
+                message:`Jobs with ${req_status} not found`
+            })
+        }
+        
+    }catch(err){
+        res.status(400).json({
+            message:"Could not fetch jobs"
+        })
+    }
+
+})
+
+//Filter by Role
+
+router.get('/role/:jobRole',async (req,res)=>{
+    const req_role=req.params.jobRole;
+    
+    try{
+        const jobs=await Jobs.find({jobrole:req_role}).sort({dateapplied:1})
+        if (jobs.length>=0){
+            console.log(jobs)
+            res.status(200).json(jobs)
+        }else{
+            res.status(204).json({
+                message:`Jobs with ${req_role} not found`
+            })
+        }
+        
+    }catch(err){
+        res.status(400).json({
+            message:"Could not fetch jobs"
+        })
+    }
+
+})
+
+// Add New Job
 
 router.post('/',async (req,res)=>{
     const {company,jobrole,dateapplied,jobstatus,notes}=req.body
@@ -54,6 +127,8 @@ router.post('/',async (req,res)=>{
     })
 
 
+// Update Job
+
 router.patch('/:id',async(req,res)=>{
     const changes=req.body
     const patch_id=req.params.id
@@ -84,7 +159,7 @@ router.patch('/:id',async(req,res)=>{
 
 })
 
-
+// Delete Job
 router.delete('/:id',async (req,res)=>{
     const del_id=req.params.id
     const req_job=await Jobs.find({_id:del_id})

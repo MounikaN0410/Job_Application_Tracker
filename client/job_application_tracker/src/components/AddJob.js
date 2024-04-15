@@ -77,18 +77,21 @@ const handleAddjob= async(e)=>{
                 <MdAssignmentAdd className='icon-big'/>
                 <h1>Add Application</h1>
             </div>
-            
-            <InputBox placeholder="Company Name"  parent_function={setCompany}/>
-            <InputBox placeholder="Role" parent_function={setJobRole}/>
-            <InputBoxDate parent_function={setDateapplied}/>
-            <InputSelectBox parent_function={setJobstatus} />
-            <textarea 
-                className="Input-box-style"
-                placeholder='Notes'
-                value={notes}
-                onChange={(event)=>setNotes(event.target.value)}/>
-             <button type='button'>Cancel</button>
-            <button type='button' onClick={handleAddjob}>Add Job</button>
+            <div className='input-properties'>
+              <InputBox placeholder="Company Name"  parent_function={setCompany}/>
+              <InputBox placeholder="Role" parent_function={setJobRole}/>
+              <InputBoxDate parent_function={setDateapplied}/>
+              <InputSelectBox parent_function={setJobstatus} />
+              <textarea 
+                  className="Input-box-style"
+                  placeholder='Notes'
+                  value={notes}
+                  onChange={(event)=>setNotes(event.target.value)}/>
+            </div>
+            <div style={{display:"flex", justifyContent:'center'}}>
+              <button className='primary-btn' type='button'>Cancel</button>
+              <button className='add-job-btn' type='button' onClick={handleAddjob}>Add Job</button>
+            </div>
            
             
         </div>

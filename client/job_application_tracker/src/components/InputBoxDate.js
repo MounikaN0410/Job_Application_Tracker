@@ -5,7 +5,9 @@ export default function InputBoxDate(props) {
     <div>
         <input
             className='input-box-style'
-            type="date"
+            type='date'
+            placeholder={props.placeholder}
+
             value={props.value}
             onChange={(event)=>{props.parent_function(event.target.value)}}
             // style={{

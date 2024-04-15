@@ -10,6 +10,7 @@
     --white:#ffffff;
     --light_grey:#C0C0C0;
     --light_blue:#dff9ff;
+    --green: #24ab70;
 
 
     --font-size-l: 30px;
@@ -49,7 +50,58 @@
 
 }
 
+
+
+/* Navbar */
+.nav-bar{
+    display:flex;
+    
+   
+    background-color:var(--main-color) ; 
+    position: sticky;
+    height:9vh;
+    width: 100vw;
+    z-index: 100;
+}
+
+.logo-container{
+    height:inherit;
+    width:5vw;
+    overflow:hidden;
+
+}
+.logo-img{
+    height:inherit;
+    width:inherit;
+    display:block;
+    
+}
+
+/* SearchBar */
+.search-bar{
+    /* background-color:var(--light_grey); */
+    height:80%;
+    width:20vw;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 20%;
+    border: 1px solid var(--main-color);
+    
+}
+
+.search-and-filter{
+    margin:15px;
+    display:flex;
+    gap:10px;
+    justify-content:space-between;
+    align-items:center;
+  
+}
+
 .add-job-container{
+    display:flex;
+    flex-direction: column;
     height:40vh;
     width:70vw;
     border: 5px solid  var(--main-color);
@@ -65,19 +117,72 @@
 
 .add-job-form{
     display:'flex';
+    object-fit: contain;
     
     justify-content:'space-evenly';
     gap:190px;
 
 }
+.input-properties{
+    margin:15px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.primary-btn{
+    background-color:var(--main-color);
+    border-radius: 6px;
+    box-shadow: 0px 8px 15px #3151df4c;
+    color: white;
+    font:var(--font-family-nunito);
+    font-size:var(--font-size-xs);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    min-height: 30px;
+    min-width: 50px;
+    padding: 10px 30px;
+    margin: 10px;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+.primary-btn :hover{
+    transform:scale(1,1.5)
+
+}
+.add-job-btn{
+    background-color:var(--green);
+    border-radius: 6px;
+    box-shadow: 0px 8px 15px #3151df4c;
+    color: white;
+    font:var(--font-family-nunito);
+    font-size:var(--font-size-xs);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    min-height: 30px;
+    min-width: 50px;
+    padding: 10px 30px;
+    margin: 10px;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+
+}
 .input-box-style{
     font:var(--font-family-nunito);
-    border: "2px solid gray";
-    border-radius: "5px";
-    padding: "10px";
-    width: "320px";
-    /* fullWidth: true; */
-    outline: "none"
+    border-bottom: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+    width: 320px;
+    outline:none
 }
 
 
@@ -87,7 +192,7 @@
 /* JobCard */
 .card{
     height:20vh;
-    width:70vw;
+    width:30vw;
     display:flex;
     gap:10px;
     border:2px solid var(--light_grey);

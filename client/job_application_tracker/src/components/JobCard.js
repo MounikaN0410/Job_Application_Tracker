@@ -75,7 +75,7 @@ export default function JobCard(props) {
             <div className='jobdata'>
                 <span className='main-text'>{props.job.company}</span>
                 <span className='grey-text'>{props.job.jobrole}</span>
-                <span className='grey-text'>{props.job.status}</span>
+                <span className='grey-text'>{props.job.jobstatus}</span>
                 <span className='grey-text'>{props.job.dateapplied}</span>
                 <span className='grey-text'>{props.job.notes}</span>
 
@@ -84,7 +84,7 @@ export default function JobCard(props) {
 
             </div>
             <div className='jobactions'>
-                <button onClick={handleUpdatejob}>Update</button>
+                <button className='primary-btn' onClick={handleUpdatejob}>Update</button>
                 <RiDeleteBin5Fill onClick={handleJobDelete}/>
             </div>
         
